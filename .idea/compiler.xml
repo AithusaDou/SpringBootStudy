@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="quartz" />
+        <module name="quickstart" />
+        <module name="spring-data-jpa" />
+        <module name="spring_boot_socket" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="book" target="1.8" />
+      <module name="quartz" target="1.8" />
+      <module name="quickstart" target="1.8" />
+      <module name="spring-data-jpa" target="1.8" />
+      <module name="spring_boot_socket" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,80 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN">
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>书籍详情</title>
+</head>
+<style>
+    .jsbz{
+        width: 100px;
+        height: 56px;
+    }
+    .fx{
+        color: #333;
+    }
+    .flo{
+        float: left;
+    }
+    .la{
+        margin-top: 50px;margin-left: 40px
+    }
+    .lala{
+        float: left ;margin-top: 30px
+    }
+    .lalala{
+        width: 340px;margin-top: 20px
+    }
+</style>
+<body>
+<div>
+        <!--顶栏-->
+        <div style="height: 57px;width:100%;border-bottom: 1px solid #e7e7e7;margin-top: -10px">
+            <!--简书标志-->
+            <div style="float: left;margin-left: 200px;margin-top: 5px">
+                <img class="jsbz" src="https://cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png">
+            </div>
+
+            <!--发现-->
+            <div class="flo" style="margin-top: 23px;margin-left: 150px">
+                <img src="http://peojfj6k8.bkt.clouddn.com/find.png">
+                <div class="fx" style="margin-top: -17px;margin-left: 25px">发现</div>
+            </div>
+            <div class="flo" style="margin-top: 23px;margin-left: 36px">
+                <img src="http://peojfj6k8.bkt.clouddn.com/guanzhu.png">
+                <div class="fx" style="margin-top: -17px;margin-left: 25px">关注</div>
+            </div>
+            <div class="flo" style="margin-top: 23px;margin-left: 36px">
+                <img src="http://peojfj6k8.bkt.clouddn.com/xiaoxi.png">
+                <div class="fx" style="margin-top: -17px;margin-left: 25px">消息</div>
+            </div>
+            <div class="flo" style="margin-top: 5px;margin-left: 36px">
+                <img src="http://peojfj6k8.bkt.clouddn.com/top.png">
+            </div>
+        </div>
+    <div class="container">
+        <h2 class="la">书籍详情</h2>
+        <div class="lala">
+            <div class="flo">
+                <img th:src="@{${book.avatar}}">
+            </div>
+            <div class="flo">
+                <h3 th:text="${book.name}"></h3>
+                <span th:text="${book.writer}"></span><br/>
+                <div class="lalala" th:text="${book.introduction}"></div>
+            </div>
+
+        </div>
+        <!--<div class="col-md-4">-->
+            <!---->
+            <!--<p th:text="${book.name}"></p>-->
+            <!--<p th:text="${book.writer}"></p>-->
+            <!--<p th:text="${book.introduction}"></p>-->
+            <!--<img th:src="@{${book.avatar}}">-->
+        <!--</div>-->
+    </div>
+</div>
+
+</body>
+</html>

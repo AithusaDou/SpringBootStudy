@@ -1,0 +1,245 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>应用推荐-少数派</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+    <style>
+        .main{
+            background-color: rgb(250,251,252);
+        }
+        .navc{
+            background-color: rgb(41,37,37);
+            height: 75px;
+        }
+        .logo{
+            margin-left: 195px;
+        }
+        .login{
+            margin-left: 1150px;
+            margin-top: -50px;
+        }
+        .one{
+            font-size: 25px;
+            position: absolute;
+            margin-top: -75px;
+            color: white;
+            margin-left: 700px;
+        }
+        .two{
+            font-size: 25px;
+            position: absolute;
+            margin-top: -75px;
+            color: white;
+            margin-left: 725px;
+        }
+        .btns{
+            margin-top: -20px;
+            padding-left: 186px;
+            padding-right: 186px;
+            border-bottom: 1px solid lightgray;
+        }
+        .three{
+            margin-top: 15px;
+        }
+        .avatar{
+            border-radius: 100%;
+            width: 40px;
+        }
+        .name{
+            margin-left: 50px;
+            margin-top: -35px;
+        }
+        .time{
+            margin-left: 45px;
+            margin-top: -10px;
+            color: rgb(155,155,168);
+        }
+        .title{
+            font-size: 25px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .content{
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .like{
+            margin-top: 20px;
+            margin-left: 42px;
+        }
+        .like1{
+            margin-left: 70px;
+            margin-top: -20px;
+            font-size: 16px;
+            color: rgb(155,155,168);
+        }
+        .comment{
+            margin-top: -23px;
+            margin-left: 95px;
+        }
+        .comment1{
+            margin-left: 130px;
+            margin-top: -22px;
+            font-size: 16px;
+            color: rgb(155,155,168);
+        }
+        .four{
+            padding-bottom: 16px;
+        }
+        .five{
+            font-weight: bolder;
+            border-bottom: 1px solid darkgrey;
+        }
+        .stitle{
+            margin-top: -110px;
+            margin-left: 110px;
+            font-size: 18px;
+            color: white;
+        }
+        .six{
+            display: inline-block;
+            cursor: pointer;
+            background-color: transparent;
+            border-radius: 100%;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid #fff;
+            padding: 7px 24px;
+            color: #fff;
+            margin-left: 110px;
+        }
+        .seven{
+            font-weight: bolder;
+            border-bottom: 1px solid darkgrey;
+        }
+        .eight{
+            margin-left: 220px;
+        }
+        .ctitle{
+            font-size: 22px;
+        }
+        .ccontent{
+            color:rgb(155,155,168);
+        }
+        .cfocus{
+            font-size: 12px;
+            color:rgb(155,155,168);
+        }
+        .nine{
+            margin-left: 250px;
+            margin-top: -30px;
+        }
+    </style>
+</head>
+<div class="main">
+<div>
+    <nav class="navbar navbar-default navc" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" class="logo">
+                    <img src="img/login.png" class="login">
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <a class="one">#</a>
+        <a class="two">应用推荐</a>
+    </div>
+</div>
+
+<div class="btn-group btn-group-justified btns" role="group"  >
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">正版软件</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">付费栏目</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">Matrix</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">专题广场</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">热门文章</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">应用推荐</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">生活方式</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default">新玩意</button>
+    </div>
+    </div>
+</div>
+
+
+<div class="container three">
+    <div class="col-md-8" col-lg-12>
+        <div class="thumbnail" th:each="card:${cardList}">
+            <div>
+                <img th:src="@{'img/'+${card.avatar }}" class="avatar">
+                <p th:text="${card.name}" class="name"></p>
+                <p th:text="${card.time}" class="time" ></p>
+            </div>
+            <div class="row center">
+                <div class="col-xs-12 col-md-9">
+                    <p th:text="${card.title}" class="title"></p>
+                    <p th:text="${card.content}" class="content"></p>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <img th:src="@{'img/'+${card.picture}}" style="width: 155px;height: 100px">
+                    <img src="img/like.png" class="like">
+                    <div th:text="${card.like}" class="like1"></div>
+                    <div><img src="img/comment.png" class="comment"></div>
+                    <div th:text="${card.comment}" class="comment1" ></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                </div>
+                <div class="col-xs-6 col-md-4 like-line" >
+                </div>
+                <div class="col-xs-6 col-md-4  four">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 recommend">
+        <div>
+            <span class="five">推荐专题</span>
+            <span style="margin-left: 220px">查看全部</span>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-12">
+                <div class="thumbnail" th:each="subject:${subjectList}">
+                    <img th:src="@{'img/'+${subject.pic}}" >
+                    <div>
+                        <div>
+                            <p th:text="${subject.stitle}" class="stitle"></p>
+                        </div>
+                    </div></br>
+                    <div class="six">查看专题</div>
+                </div>
+                <div>
+                    <span class="seven">推荐专栏</span>
+                    <span class="eight">查看全部</span>
+                </div>
+                <div class="thumbnail" th:each="column:${columnList}">
+                    <img th:src="@{'img/'+${column.cpic}}" >
+                    <p th:text="${column.ctitle}" class="ctitle"></p>
+                    <p th:text="${column.ccontent}" class="ccontent"></p>
+                    <p th:text="${column.focus}" class="cfocus"></p>
+                    <button type="button" class="btn btn-default inspect-btn nine" >查看专栏</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

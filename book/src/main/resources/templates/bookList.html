@@ -1,0 +1,86 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-CN">
+<head>
+    <script type="text/javascript" th:src="@{https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js}"></script>
+    <link th:href="@{https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>书籍列表</title>
+</head>
+
+<style>
+    .jsbz{
+        width: 100px;
+        height: 56px;
+    }
+    .fx{
+        color: #333;
+    }
+    .flo{
+        float: left;
+    }
+    .lo{
+        margin-top:20px;margin-left: 450px;border-bottom: 1px solid #e7e7e7;height: 140px;width: 620px;float: left
+    }
+    .lolo{
+        font-size: 18px;color: #333;
+    }
+    .lololo{
+        width: 483px;color: #999;font-size: 13px;margin-top: 20px
+    }
+    .lk{
+        float: left;color: #999;font-size: 13px;margin-top: 15px
+    }
+    .llk{
+        width: 125px;height: 125px;border-radius: 4px;margin-top: 20px;margin-left: -125px;position: absolute
+    }
+</style>
+<body>
+<div>
+    <!--顶栏-->
+    <div style="height: 57px;width:100%;border-bottom: 1px solid #e7e7e7;margin-top: -10px">
+        <!--简书标志-->
+        <div style="float: left;margin-left: 200px;margin-top: 5px">
+            <img class="jsbz" src="https://cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png">
+        </div>
+
+        <!--发现-->
+        <div class="flo" style="margin-top: 23px;margin-left: 150px">
+            <img src="http://peojfj6k8.bkt.clouddn.com/find.png">
+            <div class="fx" style="margin-top: -17px;margin-left: 25px">发现</div>
+        </div>
+        <div class="flo" style="margin-top: 23px;margin-left: 36px">
+            <img src="http://peojfj6k8.bkt.clouddn.com/guanzhu.png">
+            <div class="fx" style="margin-top: -17px;margin-left: 25px">关注</div>
+        </div>
+        <div class="flo" style="margin-top: 23px;margin-left: 36px">
+            <img src="http://peojfj6k8.bkt.clouddn.com/xiaoxi.png">
+            <div class="fx" style="margin-top: -17px;margin-left: 25px">消息</div>
+        </div>
+        <div class="flo" style="margin-top: 5px;margin-left: 36px">
+            <img src="http://peojfj6k8.bkt.clouddn.com/top.png">
+        </div>
+    </div>
+    <div>
+        <img style="width: 625px;height:100px;margin-top: 20px;margin-left: 145px" src="https://cdn2.jianshu.io/assets/web/seven-hot-344e8726a99ec07a8d552b33fe50be82.png"><br/>
+    </div>
+    <div class="flo" th:each="book:${bookList}">
+        <div class="lo">
+            <div class="lolo" ><a th:href="@{/book/{bookId}(bookId=${book.id})}" th:text="${book.name}"></a></div>
+            <div class="lololo">
+                <span th:text="${book.introduction}"></span>
+            </div>
+            <div class="flo">
+                <div class="lk" th:text="${book.writer}"></div>
+            </div>
+        </div>
+        <div class="flo">
+            <img th:src="@{${book.avatar}}" class="llk">
+        </div>
+    </div>
+    <div>
+        <img src="http://peojfj6k8.bkt.clouddn.com/ce.png" style="position: absolute;margin-top: -100px;margin-left: 20px">
+    </div>
+</div>
+
+</body>
+</html>
